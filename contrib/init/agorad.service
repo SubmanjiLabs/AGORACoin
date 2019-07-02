@@ -1,0 +1,26 @@
+[Unit]
+Description=AGORA's distributed currency daemon
+After=network.target
+
+[Service]
+User=agora
+Group=agora
+
+Type=forking
+PIDFile=/var/lib/agorad/agorad.pid
+
+ExecStart=/usr/bin/agorad -daemon -pid=/var/lib/agorad/agorad.pid \
+          -conf=/etc/agora/agora.conf -datadir=/var/lib/agorad
+
+ExecStop=-/usr/bin/agora-cli -conf=/etc/agora/agora.conf \
+         -datadir=/var/lib/agorad stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

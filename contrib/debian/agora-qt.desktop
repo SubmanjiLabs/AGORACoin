@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=AGORA
+Comment=AGORA P2P Cryptocurrency
+Comment[fr]=AGORA, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=AGORA, eşten eşe kriptografik sanal para birimi
+Exec=agora-qt %u
+Terminal=false
+Type=Application
+Icon=agora128
+MimeType=x-scheme-handler/agora;
+Categories=Office;Finance;
