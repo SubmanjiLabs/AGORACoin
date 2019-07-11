@@ -107,7 +107,8 @@ static const unsigned int BLOCK_DOWNLOAD_WINDOW = 1024;
 static const unsigned int DATABASE_WRITE_INTERVAL = 3600;
 /** Maximum length of reject messages. */
 static const unsigned int MAX_REJECT_MESSAGE_LENGTH = 111;
-
+/** Avoid small timestamps trickle. */
+static const unsigned int MIN_STAKE_SIZE_TIMESTAMP = 0xF0C2AC0; //Min size in bytes (lhexendian)
 /** Enable bloom filter */
 static const bool DEFAULT_PEERBLOOMFILTERS = true;
 
